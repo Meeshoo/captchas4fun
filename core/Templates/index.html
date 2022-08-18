@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <title>Doughtnut Detector</title>
+    <link rel="shortcut icon" type='image/png' href="{%  static 'favicon.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+
+    <h1>Captchas 4 Fun</h1>
+
+    <p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Log In</button>
+          </form>
+    </p>
+
+</body>
+</html>

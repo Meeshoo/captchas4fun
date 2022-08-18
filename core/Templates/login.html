@@ -1,0 +1,51 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" type='image/png' href="{%  static 'favicon.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
+
+    <title>Do CAPTCHAS For Fun</title>
+</head>
+
+<body>
+    <div class="block">
+        <form action="/" method="post" class="form">
+            {% csrf_token%}
+            <div>
+                <h1>Captchas for Fun</h1>
+            </div>
+
+            <div class="input-field">
+                <!-- <label for="username">Username</label> -->
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+            </div>
+            <div class="input-field">
+                <!-- <label for="password">Password</label> -->
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+            </div>
+            <button type="submit">Login</button>
+            <br />
+            <div>
+                {% if message %}
+                <div id="login_message">
+                    {{ message }}
+                </div>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+    <div class="block">
+        <div class="info-message">
+            To create an account just try to log in with your desired username, if it is free an account will be created
+        </div>
+    </div>
+</body>
+
+</html>
