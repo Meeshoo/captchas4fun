@@ -1,2 +1,6 @@
 .venv/
 db.sqlite3
+ core/__pycache__
+*.pyc
+*.BACKUP
+migrations/

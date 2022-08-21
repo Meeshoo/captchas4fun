@@ -4,7 +4,7 @@
 
 <html>
     <head>
-    <title>Doughtnut Detector</title>
+    <title>C4F</title>
     <link rel="shortcut icon" type='image/png' href="{%  static 'favicon.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico&display=swap" rel="stylesheet">
@@ -12,14 +12,28 @@
 
 <body>
 
-    <h1>Captchas 4 Fun</h1>
-
-    <p>
-        {{ message }}
+    <div id="header">
+        <h2 class="header-title">Captchas 4 Fun</h2>
         <form action="/logout">
-            <input type="submit" value="Logout">
+            <input id="logout-button" type="submit" value="Logout">
         </form>
-    </p>
+    </div>
+
+    <div id="main-content">
+        <p>
+            Welcome {{ username }}!
+            <br>
+            {{ message }}
+            <br>
+            You have {{ score }} points :)
+        </p>
+    </div>
+
+    <div id="footer">
+        <p>
+            Tip me in WOW: WW4NKaevQg2AFiev5LmQZ2d6VkGJrX2L3heQFMw1aH6TCW3EknbA1jHTXWwd28qTNfRBPqBTRuPBQ8s9cWwtEiY32EWu6eyWQ
+        </p>
+    </div>
 
 </body>
 </html>
