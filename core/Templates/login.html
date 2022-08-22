@@ -10,6 +10,8 @@
     <link rel="shortcut icon" type='image/png' href="{%  static 'favicon.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
 
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+
     <title>Do CAPTCHAS For Fun</title>
 </head>
 
@@ -42,8 +44,9 @@
     </div>
 
     <div class="block">
-        <div class="info-message">
-            To create an account just try to log in with your desired username, if it is free an account will be created
+        <h2 id="question" onClick="toggleVisibility()">How to register</h2>
+        <div id="answer">
+            <p>To create an account just try to log in with your desired username and password, if it is free an account will be created</p>
         </div>
     </div>
 </body>

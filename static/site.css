@@ -5,6 +5,13 @@ h1 {
   margin-bottom: 20px;
 }
 
+h2 {
+  color: #141738;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 * {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   box-sizing: border-box;
@@ -88,7 +95,7 @@ td {
 
 .block {
   width: 500px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 80px;
   padding: 10px;
   background-color: #F58382;
@@ -126,4 +133,15 @@ td {
   height: 3rem;
   bottom: 0%;
   position: fixed;
+}
+
+#question:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: #f19795;
+}
+
+#answer {
+    display: none;
+    overflow: hidden;
 }
