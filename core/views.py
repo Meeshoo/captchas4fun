@@ -8,15 +8,17 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 
 @csrf_exempt
-def index(request):
+def play(request):
 
     if request.method == 'GET':
 
         username = None
-        if request.user.is_authenticated():
-            username = request.user.get_username()
+        if request.user.is_authenticated:
+            username = request.user.username
+            return TemplateResponse(request, 'fun.html', {"message": "You have", "username": username, "score": "{:,}".format(Player.getPoints(username))})
 
-            return TemplateResponse(request, 'fun.html', {"user": username})
+        else:
+            return TemplateResponse(request, 'login.html', {"message": "You were logged out, likely a cookie thing"})
 
 @csrf_exempt
 def login(request):
@@ -48,6 +50,8 @@ def login(request):
             user = User.objects.create_user(username=username, password=password, email=usernameLower)
             user.save()
 
+            auth.login(request, user)
+
             Player.createUser(username=username)
             
             return TemplateResponse(request, 'fun.html', {"message": "Account created!", "username": username, "score": "{:,}".format(Player.getPoints(username))})
@@ -58,5 +62,4 @@ def logout(request):
 
 def leaderboard(request):
     data = Player.getLeaderBoard()
-    print(data)
     return TemplateResponse(request, 'leaderboard.html', {"data": data})
