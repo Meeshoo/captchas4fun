@@ -1,3 +1,17 @@
+:root {
+  --background-colour: #387BA8;
+  --block-colour: #F58382;
+  --heading-colour: #141738;
+  --text-colour: #F5F24C;
+}
+
+/* :root {
+  --background-colour: #EDE6F2;
+  --block-colour: #008080;
+  --heading-colour: #AA1155;
+  --text-colour: #AA1155;
+} */
+
 * {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   box-sizing: border-box;
@@ -5,14 +19,14 @@
 }
 
 h1 {
-  color: #141738;
+  color: var(--heading-colour);
   font-size: 40px;
   text-align: center;
   margin-bottom: 20px;
 }
 
 h2 {
-  color: #141738;
+  color: var(--heading-colour);
   font-size: 32px;
   text-align: center;
   margin-bottom: 20px;
@@ -23,15 +37,15 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: black;
   color: white;
-    background-color:#387BA8;
+  background: black;
+  background-color: var(--background-colour);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 p {
-  color: #F5F24C;
+  color: var(--text-colour);
   font-size: 20px;
   text-align: center;
 }
@@ -67,7 +81,7 @@ table {
 }
 
 td {
-  color: #F5F24C;
+  color: var(--text-colour);
   font-size: 20px;
   text-align: center;
 }
@@ -91,16 +105,16 @@ td {
   border-radius: 5px;
   margin-top: 80px;
   padding: 10px;
-  background-color: #F58382;
+  background-color: var(--block-colour);
 }
 
 .info-message {
   text-align: center;
-  color: #F5F24C;
+  color: var(--text-colour);
 }
 
 .header-title {
-  color: #141738;
+  color: var(--heading-colour);
   font-size: 30px;
   text-align: left;
   margin-left: 3rem;
@@ -114,13 +128,13 @@ td {
 #login_message {
   font-size: 20px;
   text-align: center;
-  color: #F5F24C;
+  color: var(--text-colour);
   margin-bottom: 30px;
 }
 
 #header {
   display: inline-flex;
-  background-color: #F58382;
+  background-color: var(--block-colour);
   width: 100%;
   height: 5rem;
   top: 0%;
@@ -128,7 +142,7 @@ td {
 }
 
 #footer {
-  background-color: #F58382;
+  background-color: var(--block-colour);
   width: 100%;
   height: 3rem;
   bottom: 0%;
