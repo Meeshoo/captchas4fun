@@ -14,22 +14,24 @@
 
     <div id="header">
         <h2 class="header-title">Captchas 4 Fun</h2>
-        <form action="/logout">
-            <input id="logout-button" type="submit" value="Logout">
+        <form action="/play">
+            <input class="nav-button" type="submit" value="Home">
         </form>
-        <form action="/leaderboard">
-            <input id="leaderboard-button" type="submit" value="Leaderboard">
+        <form action="/logout">
+            <input class="nav-button" type="submit" value="Logout">
         </form>
     </div>
 
     <div id="main-content">
         <h1>Leaderboard</h1>
+        <table>
         {% for item in data %}
-        <tr>
-            <td>{{ item.name }}: {{ item.score }}</td>
-            <br>
-        </tr>
-    {% endfor %}
+            <tr>
+                <td>{{ item.name }}:</td><td>{{ item.score }}</td>
+                <br>
+            </tr>
+        {% endfor %}
+        </table>
     </div>
 
     <div id="footer">
