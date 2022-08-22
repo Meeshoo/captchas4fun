@@ -36,16 +36,11 @@ class Player(models.Model):
         def scoreSort(obj):
             return obj.score
 
-        # Get all DB objects and sort by score
         retreivedObjects = Player.objects.all()
         objectList = list(retreivedObjects)
         objectList.sort(reverse = True, key = scoreSort)
 
-        # # Put scores into list
-        # for o in objectList:
-        #     n = o.name
-        #     s = o.score
-        #     names.append(n)
-        #     scores.append(s)
+        for entry in objectList:
+            entry.score = "{:,}".format(entry.score)
 
         return objectList
