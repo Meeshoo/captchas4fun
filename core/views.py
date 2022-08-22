@@ -55,3 +55,8 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return TemplateResponse(request, 'login.html')
+
+def leaderboard(request):
+    data = Player.getLeaderBoard()
+    print(data)
+    return TemplateResponse(request, 'leaderboard.html', {"data": data})

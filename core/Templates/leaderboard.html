@@ -23,13 +23,13 @@
     </div>
 
     <div id="main-content">
-        <p>
-            Welcome {{ username }}!
+        <h1>Leaderboard</h1>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.name }}: {{ item.score }}</td>
             <br>
-            {{ message }}
-            <br>
-            You have {{ score }} points :)
-        </p>
+        </tr>
+    {% endfor %}
     </div>
 
     <div id="footer">

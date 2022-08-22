@@ -28,3 +28,24 @@ class Player(models.Model):
             for user in users:
                 user.score = user.score + numberOfPoints
                 user.save()
+
+    def getLeaderBoard():
+        names = []
+        scores = []
+
+        def scoreSort(obj):
+            return obj.score
+
+        # Get all DB objects and sort by score
+        retreivedObjects = Player.objects.all()
+        objectList = list(retreivedObjects)
+        objectList.sort(reverse = True, key = scoreSort)
+
+        # # Put scores into list
+        # for o in objectList:
+        #     n = o.name
+        #     s = o.score
+        #     names.append(n)
+        #     scores.append(s)
+
+        return objectList
