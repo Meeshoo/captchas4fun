@@ -67,15 +67,18 @@ def login(request):
                 print('Wrong')
                 return TemplateResponse(request, 'login.html', {"message": "Account exists and password is wrong"})
         else:
-            # Uses email field as lower case user check bodge
-            user = User.objects.create_user(username=username, password=password, email=usernameLower)
-            user.save()
+            if username.isalnum():
+                # Uses email field as lower case user check bodge
+                user = User.objects.create_user(username=username, password=password, email=usernameLower)
+                user.save()
 
-            auth.login(request, user)
+                auth.login(request, user)
 
-            Player.createUser(username=username)
-            
-            return TemplateResponse(request, 'fun.html', {"message": "Account created!", "username": username, "score": "{:,}".format(Player.getPoints(username))})
+                Player.createUser(username=username)
+                
+                return TemplateResponse(request, 'fun.html', {"message": "Account created!", "username": username, "score": "{:,}".format(Player.getPoints(username))})
+            else:
+                return TemplateResponse(request, 'login.html', {"message": "Username must only contain letters and numbers"})
             
 def logout(request):
     auth.logout(request)
