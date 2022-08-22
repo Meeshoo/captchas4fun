@@ -36,8 +36,7 @@ def login(request):
             if user is not None:
                 try:
                     auth.login(request, user)
-                    Player.addPoints(username, 10)
-                    return TemplateResponse(request, 'fun.html', {"message": "Logged back in!", "username": username, "score": Player.getPoints(username)})
+                    return TemplateResponse(request, 'fun.html', {"message": "Logged back in!", "username": username, "score": "{:,}".format(Player.getPoints(username))})
                 except:
                     print("Didnae work")
                     return TemplateResponse(request, 'login.html', {"message": "Cannot log in with cookie"})
@@ -51,7 +50,7 @@ def login(request):
 
             Player.createUser(username=username)
             
-            return TemplateResponse(request, 'fun.html', {"message": "Account created!", "username": username, "score": Player.getPoints(username)})
+            return TemplateResponse(request, 'fun.html', {"message": "Account created!", "username": username, "score": "{:,}".format(Player.getPoints(username))})
             
 def logout(request):
     auth.logout(request)

@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+import random
 
 class Player(models.Model):
     name = models.TextField(max_length=30)
     score = models.IntegerField()
 
     def createUser(username):
-        entry = Player(name=username, score=0)
+        entry = Player(name=username, score=random.randint(0,1000000))
         entry.save()
 
     def getPoints(username):
