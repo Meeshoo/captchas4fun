@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type='image/png' href="{%  static 'favicon.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
 
 <body>
@@ -24,12 +25,14 @@
 
     <div id="main-content">
         <p>
-            Welcome {{ username }}!
-            <br>
             {{ message }}
-            <br>
-            You have {{ score }} points :)
         </p>
+        <br>
+        <form action="?" method="POST">
+            <div class="g-recaptcha" data-sitekey="6LcvfpohAAAAALwpl5vbB8pTyZ_0459QjfDOq-ua"></div>
+            <br/>
+            <input type="submit" value="Submit">
+          </form>
     </div>
 
     <div id="footer">

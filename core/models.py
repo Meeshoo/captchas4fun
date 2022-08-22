@@ -7,7 +7,7 @@ class Player(models.Model):
     score = models.IntegerField()
 
     def createUser(username):
-        entry = Player(name=username, score=random.randint(0,1000000))
+        entry = Player(name=username, score=0)
         entry.save()
 
     def getPoints(username):
