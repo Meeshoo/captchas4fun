@@ -1,4 +1,9 @@
 function toggleVisibility() {
   var answer = document.getElementById("answer");
-  answer.style.display = "block";
+  if (answer.style.display == "block"){
+    answer.style.display = "none";
+  }
+  else {
+    answer.style.display = "block";
+  }
 }
