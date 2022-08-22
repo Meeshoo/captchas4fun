@@ -39,6 +39,7 @@ class Player(models.Model):
         retreivedObjects = Player.objects.all()
         objectList = list(retreivedObjects)
         objectList.sort(reverse = True, key = scoreSort)
+        objectList = objectList[:10]
 
         for entry in objectList:
             entry.score = "{:,}".format(entry.score)
