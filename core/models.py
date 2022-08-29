@@ -36,12 +36,23 @@ class Player(models.Model):
         def scoreSort(obj):
             return obj.score
 
-        retreivedObjects = Player.objects.all()
-        objectList = list(retreivedObjects)
-        objectList.sort(reverse = True, key = scoreSort)
-        objectList = objectList[:10]
+        allScores = Player.objects.all()
+        scoreList = list(allScores)
+        scoreList.sort(reverse = True, key = scoreSort)
 
-        for entry in objectList:
+        # scoresPerPage = 10
+
+        # scoreListLength = len(scoreList)
+        # numberOfPages = scoreListLength / scoresPerPage
+
+        # for i in range(0, scoreListLength):
+        #     print(i)
+        #     scorePages  = []
+        #     scorePages[i] = scoreList[i*scoresPerPage:(i*scoresPerPage)+scoresPerPage]
+
+        scoreList = scoreList[:10]
+
+        for entry in scoreList:
             entry.score = "{:,}".format(entry.score)
 
-        return objectList
+        return scoreList
