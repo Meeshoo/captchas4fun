@@ -1,8 +1,3 @@
-variables {
-  access_key="${env("AWS_ACCESS_KEY_ID")}"
-  secret_key="${env("AWS_SECRET_ACCESS_KEY")}"
-}
-
 source "docker" "base_captchas4fun" {
   image = "550661752655.dkr.ecr.eu-west-1.amazonaws.com/base-captchas4fun"
   commit = true
@@ -36,8 +31,6 @@ build {
 
     post-processor "docker-push" {
       ecr_login = true
-      aws_access_key = var.access_key
-      aws_secret_key = var.secret_key
       login_server = "https://550661752655.dkr.ecr.eu-west-1.amazonaws.com/mitlan"
     }
   }
