@@ -21,10 +21,13 @@ jobs:
       - name: Install Packer
         run: sudo apt-get update && sudo apt-get install packer
 
+      - name: Install Docker plugin for Packer
+        run: sudo packer plugins install github.com/hashicorp/docker
+
       - uses: actions/checkout@v1
 
       - name: Create dotenv and add contents
-        run: mkdir captchas4fun/.env && echo ${{ secrets.DOTENV_CONTENTS }} > captchas4fun/.env
+        run: touch captchas4fun/.env && echo ${{ secrets.DOTENV_CONTENTS }} > captchas4fun/.env
 
       - name: Swap in Django secret
         run: sed -i 's/VerySecretPleaseChangeMeRoightNow/${{ secrets.DJANGO_SECRET }}/' captchas4fun/settings.py
