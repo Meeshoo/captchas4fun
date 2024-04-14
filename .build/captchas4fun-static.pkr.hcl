@@ -2,8 +2,6 @@ source "docker" "base_captchas4fun" {
   image = "550661752655.dkr.ecr.eu-west-1.amazonaws.com/base-captchas4fun"
   commit = true
   ecr_login = true
-  aws_access_key = var.access_key
-  aws_secret_key = var.secret_key
   login_server = "https://550661752655.dkr.ecr.eu-west-1.amazonaws.com/mitlan"
   changes = [
     "ENV FOO bar",
