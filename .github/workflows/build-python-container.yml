@@ -39,7 +39,7 @@ jobs:
             echo -e "region = eu-west-1\n" | sudo tee -a /root/.aws/config;
 
       - name: Create dotenv and add contents
-        run: touch captchas4fun/.env && echo ${{ secrets.DOTENV_CONTENTS }} > captchas4fun/.env
+        run: touch .env && echo ${{ secrets.DOTENV_CONTENTS }} > .env
 
       - name: Swap in Django secret
         run: sed -i 's/VerySecretPleaseChangeMeRoightNow/${{ secrets.DJANGO_SECRET }}/' captchas4fun/settings.py
