@@ -7,20 +7,24 @@
     <title>C4F</title>
     <link rel="shortcut icon" type='image/png' href="{%  static 'favicon.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Source+Sans+Pro">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
 
 <body>
 
     <div id="header">
-        <h2 class="header-title">Captchas 4 Fun</h2>
-        <form action="/leaderboard">
-            <input class="nav-button" type="submit" value="Leaderboard">
-        </form>
-        <form action="/logout">
-            <input class="nav-button" type="submit" value="Logout">
-        </form>
+        <div class="header-title">
+            <h2>Captchas 4 Fun</h2>
+        </div>
+        <div class="header-buttons">
+            <form class="header-form" action="/leaderboard">
+                <input class="nav-button" type="submit" value="Leaderboard">
+            </form>
+            <form class="header-form" action="/logout">
+                <input class="nav-button" type="submit" value="Logout">
+            </form>
+        </div>
     </div>
 
     <div id="main-content">
