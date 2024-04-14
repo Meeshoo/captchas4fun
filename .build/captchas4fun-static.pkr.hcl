@@ -5,7 +5,6 @@ source "docker" "base_captchas4fun" {
   login_server = "https://550661752655.dkr.ecr.eu-west-1.amazonaws.com/mitlan"
   changes = [
     "ENV FOO bar",
-    "ENTRYPOINT [\"nginx\", \"-g\", \"daemon off;\"]"
   ]
 }
 
